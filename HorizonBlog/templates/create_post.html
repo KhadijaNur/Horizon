@@ -1,0 +1,17 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Write{% endblock %}
+
+{% block content %}
+    <div class="">
+        <div class="create-post">
+            <form action="" method="POST">
+                {{form.hidden_tag()}}
+                {{form.title.label(class="form-label")}} {{form.title(class="form-input")}}
+                {{form.text.label(class="form-label")}} {{form.text(class="form-input form-text")}}
+                {{form.submit(class="button login-button")}}
+            </form>
+        </div>
+    </div>
+{% endblock %}

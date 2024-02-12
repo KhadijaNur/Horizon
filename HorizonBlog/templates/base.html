@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Horizon{% endblock %}</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Playfair+Display&family=Shadows+Into+Light&family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/cee305bb4c.js" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+
+    <header>
+        <div class="logo"><a href="{{url_for('core.index')}}">Horizon</a></div>
+        <input type="checkbox" id="nav_check" hidden>
+        <nav>
+            <ul>
+                <li>
+                    <a href="{{url_for('core.index')}}" class="{{ 'active' if request.path == '/' else '' }}">Home</a>
+                </li>
+                <li>
+                    <a href="{{url_for('core.info')}}" class="{{ 'active' if request.path == '/info' else '' }}">Blogs</a>
+                </li>
+                <li>
+                    <a href="{{url_for('core.ourstory')}}"class="{{ 'active' if request.path == '/ourstory' else '' }}">Our Story</a>
+                </li>
+                <li>
+                    <a href="{{url_for('core.contact')}}" class="{{ 'active' if request.path == '/contact' else '' }}">Contact</a>
+                </li>
+                {% if current_user.is_authenticated %}
+                <li>
+                    <a class="button {{ 'active' if request.path == '/create' else '' }}" href="{{url_for('posts.create')}}" >Write </a>
+                </li>
+                <li>
+                    <a class="button {{ 'active' if request.path == '/account' else '' }}" href="{{url_for('users.account')}}">Account</a>
+                </li>
+  
+
+                <li>
+                    <a class="button {{ 'active' if request.path == '/logout' else '' }}" href="{{url_for('users.logout')}}" >Log Out </a>
+                </li>
+
+                {% else %}
+                <li>
+                    <a class="button {{ 'active' if request.path == '/login' else '' }}" href="{{url_for('users.login')}}">Login</a>
+                </li>
+                <li>
+                    <a class="button {{ 'active' if request.path == '/register' else '' }}" href="{{url_for('users.register')}}" >Register</a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+        <label for="nav_check" class="nav-dropdown">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+    </header>
+
+    {% block content %}{% endblock %}
+
+
+    <footer>
+        <div class="footer-navigation">
+            <ul>
+                <li>
+                    <a href="{{url_for('core.index')}}">Home</a>
+                </li>
+                <li>
+                    <a href="">Blogs</a>
+                </li>
+                <li>
+                    <a href="{{url_for('core.ourstory')}}"class="{{ 'active' if request.path == '/ourstory' else '' }}">Our Story</a>
+                </li>
+                <li>
+                    <a href="{{url_for('core.contact')}}">Contact</a>
+                </li>
+            </ul>
+            <div class="footer-text">
+                <p>&copy; 2024 Horizon. All rights reserved.</p>
+                <p>Designed by <a href="">Khadija Nur</a></p>
+            </div>
+
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+    
+</body>
+</html>

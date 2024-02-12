@@ -1,0 +1,24 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Account{% endblock %}
+
+{% block content %}
+
+    <div class="account">
+        <div class="account-img">
+            <img src="{{ url_for('static', filename='profile_pictures/'+current_user.profile_image)}}" alt="">
+        </div>
+        <div class="account-form">
+            <form action="" method="post" enctype="multipart/form-data">
+            {{form.hidden_tag()}}
+            {{form.name.label(class="form-label")}} {{form.name(class="form-input")}}
+            {{form.email.label(class="form-label")}} {{form.email(class="form-input")}}
+            {{form.username.label(class="form-label")}} {{form.username(class="form-input")}}
+            {{form.picture.label(class="form-label")}} {{form.picture(class="form-input")}}
+        
+            {{form.submit(class="button login-button")}}
+            </form>
+        </div>
+    </div>
+{% endblock %}

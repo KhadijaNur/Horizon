@@ -1,0 +1,70 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Horizon{% endblock %}
+
+{% block content %}
+<div class="index-page">
+   <div class="index-header">
+    <div class="index-header-text">
+        <p>Inspiring articles and some great insights</p>
+        <h2>Curiosity in Motion</h2>
+        <p>Exploring the World of Creativity and Innovation. Providing Inspiration and Resources for Artists, Writers, and Entrepreneurs Alike.</p>
+        <a class="button" href="{{url_for('core.info')}}">Start reading</a>
+    </div>
+    <div class="index-header-img">
+        <img src="{{url_for('static',filename='images/reader.jpeg')}}" alt="">
+    </div>
+
+   </div>
+
+   <div class="featured-blogs">
+    <h3>Featured Blogs</h3>
+    <div class="featured-blogs-container">
+        <div class="main-blog">
+            <div class="main-blog-img">
+                <img src="{{url_for('static',filename='images/reader.jpeg')}}" alt="">
+            </div>
+            <div class="main-blog-text">
+                <h2>{{first_post.title}}</h2>
+                <p>{{first_post.date.strftime('%d %B  %Y')}}</p>
+                <span>By {{first_post.author.name }}</span>
+                <p>{{first_post.text | truncate_text(800)}}</p>
+                <a href="{{url_for('posts.post', post_id=first_post.id)}}">Read more </a>
+            </div>
+        </div>
+        <div class="secondary-blogs">
+            <div class="secondary-blogs-container">
+                <div class="secondary-blogs-img">
+                    <img src="{{url_for('static',filename='images/reader.jpeg')}}" alt="">
+                </div>
+                <div class="secondary-blogs-text">
+                    <h2>{{second_post.title}}</h2>
+                    <p>{{second_post.date.strftime('%d %B  %Y')}}</p>
+                    <span>By {{second_post.author.name }}</span>
+                    <p>{{second_post.text | truncate_text(150)}}</p>
+                    <a href="{{url_for('posts.post', post_id=second_post.id)}}">Read more </a>
+                </div>
+ 
+            </div>
+            <div class="secondary-blogs-container">
+                <div class="secondary-blogs-img">
+                    <img src="{{url_for('static',filename='images/reader.jpeg')}}" alt="">
+                </div>
+                <div class="secondary-blogs-text">
+                    <h2>{{third_post.title}}</h2>
+                    <p>{{third_post.date.strftime('%d %B  %Y')}}</p>
+                    <span>By {{third_post.author.name }}</span>
+                    <p>{{third_post.text | truncate_text(150)}}</p>
+                    <a href="{{url_for('posts.post', post_id=third_post.id)}}">Read more </a>
+                </div>
+ 
+            </div>
+        </div>
+    </div>
+
+   </div>
+
+
+</div>
+{% endblock %}

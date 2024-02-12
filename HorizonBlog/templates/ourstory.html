@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}Our story{% endblock %}
+
+{% block content %}
+    <section>
+        <div class="our-story-header">
+            <div class="our-story-main-text">
+                <h2>Welcome to Horizon</h2>
+                <h3>Where Stories Shape the World</h3>
+            </div>
+            <div class="our-story-text">
+                <p>At Horizon, we embark on a journey fueled by human stories and transformative ideas. In this vast digital landscape, we've carved out a space that resonates with simplicity, beauty, and collaboration. It's a sanctuary amidst the chaos, a place where the power of words transcends the noise.
+                    <br><br>
+                    In a world saturated with instant gratification and fleeting attention spans, Horizon stands as a testament to the belief that every word you read and write holds profound significance. Words possess the ability to divide or empower, inspire or discourage. We recognize the impact they carry, and we've built Horizon as a platform that rewards depth, nuance, and the investment of time.
+                    <br><br>
+                    The internet may be teeming with the sensational and the superficial, but Horizon is a haven for substance. It's more than a blog; it's a canvas for thoughtful conversations that go beyond mere glances and delve into the richness of ideas. Here, we celebrate the art of storytelling as a vehicle for understanding, connecting, and evolving.
+                    <br><br>
+                    Our ethos echoes the sentiment that the most profound stories often lie beyond the surface. Horizon is not just a platform; it's a community where writers and readers converge to explore the vast landscapes of knowledge, wisdom, and imagination.
+                    <br><br>
+                    As you embark on your journey with Horizon, envision a place where your words find resonance, where depth prevails over superficiality, and where substance triumphs over packaging. Together, let's deepen our collective understanding of the world through the powerful medium of writing.
+                    <br><br>
+                    Join us on this expedition of narratives, ideas, and revelations. Welcome to Horizon—where stories shape the world.
+                    
+                    </p>
+                    <div class="">
+                        <div class="start">
+                            <a href="{{url_for('core.info')}}"><h3>Start reading</h3>  <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                        <div class="start">
+                            <a href="{{url_for('users.register')}}"><h3>Start writing</h3>  <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                        
+                    </div>
+            </div>
+
+
+        </div>
+
+    </section>
+
+{% endblock %}

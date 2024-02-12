@@ -1,0 +1,62 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+ <div class="">
+    <div class="contact-container">
+
+        <div class="contact-page">
+            <div class="contact-text">
+                <h3>Let's talk</h3>
+                <p>Reach out to us with any thoughts, questions, or collaboration ideas. <br>We look forward to hearing from you!</p>
+                <div class=" hide-info">
+                <br>
+                <h4>Email</h4>
+                <p>itskhadijanur@gmail.com</p>
+                
+                <br>
+
+                <h4>Telefon</h4>
+                <p>+905551026100</p>
+
+                <br>
+                <h4>Socials</h4>
+                <p><a href=""> <i class="fa-brands fa-instagram"></i> Instagram</a></p>
+                <p><a href=""><i class="fa-brands fa-linkedin"></i> Linkedin</a></p>
+                <p><a href=""><i class="fa-brands fa-twitter"></i>X (Twitter)</a></p>
+                </div>
+                <div class="socials-contact">
+                    <a href=""><i class="fa-solid fa-envelope"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                    <a href=""><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <div class="contact-form">
+
+                <form method="POST" action="{{ url_for('core.contact') }}">
+                    {{ form.hidden_tag() }}
+                    <div class="">
+                    {{ form.name.label(class="form-label") }} {{ form.name(class="form-input") }}
+                    </div>
+                    <div class="">
+                        {{ form.subject.label(class="form-label") }} {{ form.subject(class="form-input") }}
+                    </div>
+                    <div class="">
+                    {{ form.email.label(class="form-label") }} {{ form.email(class="form-input") }}
+                    </div>
+                    <div class="">
+                    {{ form.message.label(class="form-label") }} {{ form.message(class="form-input textarea-contact") }}
+                    </div>
+                    <button type="submit" class="button contact-button">Submit</button>
+                </form>
+            </div>
+          
+        </div>
+    </div>
+ </div>
+
+{% endblock %}

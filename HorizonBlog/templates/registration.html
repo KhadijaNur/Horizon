@@ -1,0 +1,25 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Join us{% endblock %}
+
+{% block content %}
+<div class="register-page">
+   <div class="register-img">
+      <img src="../static/images/face.gif" alt="">
+   </div>
+   <div class="register-form">
+      <h3>Join us</h3>
+      <form action="" method="post">
+       {{form.hidden_tag()}}
+       {{form.name.label(class="form-label")}} {{form.name(class="form-input")}}
+       {{form.email.label(class="form-label")}} {{form.email(class="form-input")}}
+       {{form.username.label(class="form-label")}} {{form.username(class="form-input")}}
+       {{form.password.label(class="form-label")}} {{form.password(class="form-input")}}
+       {{form.confirm_password.label(class="form-label")}} {{form.confirm_password(class="form-input")}}
+       <br>
+       {{form.submit(class="button register-button")}}
+      </form>
+   </div>
+</div>
+{% endblock %}
